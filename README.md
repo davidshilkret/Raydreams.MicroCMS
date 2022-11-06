@@ -1,8 +1,8 @@
 # MicroCMS
 
-A rediculously simple CMS that serves Markdown content files from an Azure File Share.
+A rediculously simple CMS that serves Markdown content files in either an Azure File Share or Blob Container.
 
-No database is used.
+No web server needed... no database is used.
 
 ## Example
 
