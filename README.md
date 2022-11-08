@@ -18,9 +18,9 @@ It uses the [MarkDig](https://github.com/xoofx/markdig) Markdown to HTML convert
 
 ## Why
 
-I really just wanted a simple way to post Markdown files without having to use someone else's service. Even [Jekyll](https://jekyllrb.com/) was overkill.
+I really just wanted a simple way to post Markdown files without having to use someone else's service. Even [Jekyll](https://jekyllrb.com/) was overkill. Seriously if you think Jekyll is "simple" you are smokin' something. I mean it's cool and all but...
 
-Markdown is much easier and faster to type without all the rediculous HTML.
+Markdown is much easier and faster to type without all the ridiculous HTML. You can make Markdown as basic or advanced as you like.
 
 ## Layouts
 
@@ -43,6 +43,18 @@ https://www.myblog.com/page/index?layout=<layout>
 For exmaple:
 [Dark Mode Layout](https://blog.raydreams.com/page/index?layout=dark)
 
+## Front Matter
+
+Front matter lets you add Metadata to a Markdown file. As of right now Front Matter is supported and parsed but it's not yet implemented. It's just a YML header at the start of the file like:
+
+```
+---
+title: My Title
+---
+
+# Welcome to the New World
+```
+
 ## Endpoints
 
 For now there are only a couple of endpoints :
@@ -50,7 +62,7 @@ For now there are only a couple of endpoints :
 * **GetPage** - Intercepts any call to the root for now and redirects back to the home page
   * path: [GET] /
 * **GetPage** - Gets a single Markdown page from the data store and returns it as HTML or wrapped JSON
-  * path: [GET] /page/<filename_with_no_ext>?layout=<file>&wrapped=<bool>
+  * path: [GET] /page/<filename_with_no_ext>?layout=&lt;file&gt;&wrapped=&lt;bool&gt;
   * params:
     * layout (string) [optional] to use an explicit layout instead of the default one
     * wrapped (bool) [optional] set to true to return the page as wrapped JSON for using as headless
@@ -64,7 +76,7 @@ For now there are only a couple of endpoints :
   * params: none
   * output: a JSON string
 * **List** - Get an HTML list of all the pages. An integer of some value is required but has no effect just yet
-  * path: [GET] /list/<integer>
+  * path: [GET] /list/&lt;integer&gt;
   * params: none
   * output: HTML list of files
 
@@ -107,6 +119,8 @@ It's even headless. Just addd `wrapped=true` to the URL.
 ```
 https://blog.raydreams.com/page/index?wrapped=true
 ```
+
+The resulting outer JSON object is not finalized.
 
 ## Testing
 
