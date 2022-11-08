@@ -22,6 +22,27 @@ I really just wanted a simple way to post Markdown files without having to use s
 
 Markdown is much easier and faster to type without all the rediculous HTML.
 
+## Layouts
+
+The concept is pretty simple... Make any HTML template and put it in a templates folder like `main.html`.
+
+For the body sections just use something like:
+```
+<div class="container">
+    <div>{% BODY %}</div>
+</div>
+```
+
+For now the token must be exactly `{% BODY %}`. I'm adding more tokens but the only other one for now is `{% TIMESTAMP %}`.
+
+So browsing to the homepage would be
+```
+https://www.myblog.com/page/index?layout=<layout>
+```
+
+For exmaple:
+[Dark Mode Layout](https://blog.raydreams.com/page/index?layout=dark)
+
 ## Endpoints
 
 For now there are only a couple of endpoints :
