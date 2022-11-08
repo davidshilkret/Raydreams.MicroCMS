@@ -64,7 +64,7 @@ For now there are only a couple of endpoints :
   * params: none
   * output: a JSON string
 * **List** - Get an HTML list of all the pages. An integer of some value is required but has no effect just yet
-  * path: [GET] /list/<int>
+  * path: [GET] /list/<integer>
   * params: none
   * output: HTML list of files
 
