@@ -12,6 +12,10 @@ It uses the [MarkDig](https://github.com/xoofx/markdig) Markdown to HTML convert
 
 [My Test Blog](https://blog.raydreams.com/page/index)
 
+## The Repo
+
+[MicroCMS on GitHub](https://github.com/GrumpyCockatiel/Raydreams.MicroCMS)
+
 ## Why
 
 I really just wanted a simple way to post Markdown files without having to use someone else's service. Even [Jekyll](https://jekyllrb.com/) was overkill.
@@ -73,6 +77,14 @@ There are handful of settings you will want to set either in `local.settings.jso
     "layoutExt": "html",
     "store": "file"
 }
+```
+
+## Headless Too
+
+It's even headless. Just addd `wrapped=true` to the URL.
+
+```
+https://blog.raydreams.com/page/index?wrapped=true
 ```
 
 ## Testing
