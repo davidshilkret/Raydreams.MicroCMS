@@ -90,6 +90,7 @@ For now there are only a couple of endpoints :
 * Fork this repo and publish the project to our new Azure Function
     * You can publish from Visual Studio or just accept the default YML script from Deployment Center
     * Make sure you are using Azure Function runtime v4 (this is NOT the same as the .NET version)
+    * Make sure you set `FUNCTIONS_WORKER_RUNTIME=dotnet-isolated` in Configuration.
 * Upload some Markdown files, a base layout file and some images to the corresponding Data Store that was created with the Azure Function.
 * Add a Single table called `Logs` to your Azure Storage Tables.
 
