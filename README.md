@@ -59,7 +59,7 @@ title: My Title
 
 For now there are only a couple of endpoints :
 
-* **GetPage** - Intercepts any call to the root for now and redirects back to the home page
+* **GetHome** - Intercepts any call to the root for now and redirects back to the home page
   * path: [GET] /
 * **GetPage** - Gets a single Markdown page from the data store and returns it as HTML or wrapped JSON
   * path: [GET] /page/<filename_with_no_ext>?layout=&lt;file&gt;&wrapped=&lt;bool&gt;
