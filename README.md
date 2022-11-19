@@ -16,7 +16,7 @@ It uses the [MarkDig](https://github.com/xoofx/markdig) Markdown to HTML convert
 
 [MicroCMS on GitHub](https://github.com/GrumpyCockatiel/Raydreams.MicroCMS)
 
-## Why
+## Use Case
 
 I really just wanted a simple way to post Markdown files without having to use someone else's service. Even [Jekyll](https://jekyllrb.com/) was overkill. Seriously if you think Jekyll is "simple" you are smokin' something. I mean it's cool and all but...
 
@@ -87,7 +87,7 @@ For now there are only a couple of endpoints :
 * Create an Azure Account with a Free Pay-As-You-Go subscription.
 * Create a new Azure Function Resource. You can use a Windows or Liunx App Service.
     * You can use the Data Storage account created with it but I suggest giving it a better name like `blogdevsa01`
-* Fork this repo and publish the project to our new Azure Function
+* Fork this repo and publish the main function app project to our new Azure Function
     * You can publish from Visual Studio or just accept the default YML script from Deployment Center
     * Make sure you are using Azure Function runtime v4 (this is NOT the same as the .NET version)
     * Make sure you set `FUNCTIONS_WORKER_RUNTIME=dotnet-isolated` in Configuration.
@@ -106,12 +106,39 @@ There are handful of settings you will want to set either in `local.settings.jso
     "root": "blog",
     "homepage": "index",
     "errorpage": "error",
-    "imageDir": "images",
+    "imageDir": "image",
     "layoutDir": "layouts",
     "layoutExt": "html",
     "store": "file"
 }
 ```
+
+![Azure Function Configuration](./readme/config-1.png)
+
+## Local Folder Watcher
+
+There's a second project called `Raydreams.MicroCMS.CLI` which is an exe that will watch a specific folder on your machine.
+
+You must add the `appsettings.json` file to your project with similar data as local.settings.json
+
+```
+"AppConfig": {
+    "LocalRoot": "",
+    "RemoteRoot": "blog",
+    "ConnectionString": "DefaultEndpointsProtocol=https;AccountName=blogdevsa001;AccountKey=4LsH6ehblvj0i33eqs5SYUxfKxBec88ENMBzFC1STf6HfEKojJvzW8vzabtv7n14Zk/PYzrT+h8J+ASt1/Bvow==;EndpointSuffix=core.windows.net",
+    "LocalImagesDir": "image",
+    "LocalLayoutsDir": "layouts",
+    "LocalPagesDir": "page"
+}
+```
+
+You can run the exe on OS X using:
+```
+dotnet MicroCMS.dll -w <full_path_to_local_blog_root>
+dotnet MicroCMS.dll -w "/Users/bob/Desktop/MyBlog/"
+```
+
+On Windows of course you can run just the exe natively itself.
 
 ## Headless Too
 
