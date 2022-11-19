@@ -140,6 +140,22 @@ dotnet MicroCMS.dll -w "/Users/bob/Desktop/MyBlog/"
 
 On Windows of course you can run just the exe natively itself.
 
+On a file change or addition, the file will be updated remotely. On file deletion or removal, the file will be removed remotely.
+
+## Local Structure
+
+To make it easier to preview you Markdown with images you can create a root folder named anything you like
+
+Local Folder Structure:
++ MyBlog
+  + image
+  + layouts
+  + page
+    + subfolder1
+    + subfolder2
+
+MicroCMS will only look for images in the image folder. I'm working on this to make it more customizable.
+
 ## Headless Too
 
 It's even headless. Just addd `wrapped=true` to the URL.
